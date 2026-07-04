@@ -18,6 +18,7 @@ function SectionBackground() {
 }
 
 export default function StoryApp() {
+  const [invitationOpened, setInvitationOpened] = useState(false);
   const [introPlayed, setIntroPlayed] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
@@ -53,29 +54,12 @@ export default function StoryApp() {
   }, []);
 
   useEffect(() => {
-    if (introPlayed && audioRef.current) {
+    if (invitationOpened && audioRef.current) {
       audioRef.current.play().then(() => setIsPlaying(true)).catch(() => setIsPlaying(false));
     }
-  }, [introPlayed]);
+  }, [invitationOpened]);
 
-  // Attempt to recover audio playback on first user interaction if it was blocked
-  useEffect(() => {
-    const handleInteraction = () => {
-      if (introPlayed && audioRef.current && !isPlaying) {
-        audioRef.current.play().then(() => setIsPlaying(true)).catch(() => {});
-      }
-    };
-    
-    document.addEventListener('click', handleInteraction, { once: true });
-    document.addEventListener('touchstart', handleInteraction, { once: true });
-    document.addEventListener('scroll', handleInteraction, { once: true });
-    
-    return () => {
-      document.removeEventListener('click', handleInteraction);
-      document.removeEventListener('touchstart', handleInteraction);
-      document.removeEventListener('scroll', handleInteraction);
-    };
-  }, [introPlayed, isPlaying]);
+
 
   const togglePlay = () => {
     if (audioRef.current) {
@@ -96,9 +80,53 @@ export default function StoryApp() {
   return (
     <>
       <AnimatePresence>
-        {!introPlayed && (
+        {!invitationOpened && (
           <motion.div
+            key="invitation-opened"
             initial={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.0 }}
+            className="fixed inset-0 z-[200] bg-[#FAFAFA] flex flex-col items-center justify-center"
+          >
+            <div className="absolute inset-0 z-0 pointer-events-none">
+              <img
+                src="/white_roses_bg.png"
+                alt="White Roses"
+                className="w-full h-full object-cover opacity-50"
+              />
+              <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-white/40 to-white/80" />
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 1 }}
+              className="z-10 flex flex-col items-center gap-8"
+            >
+              <h1 className="script text-5xl sm:text-6xl text-[#2C2C2C] drop-shadow-sm font-normal text-center px-4">
+                Chamindu <span className="text-[#8B7355] text-4xl">&amp;</span> Onanong
+              </h1>
+              <p className="text-xs uppercase tracking-[0.3em] text-[#2C2C2C] font-medium text-center">
+                Wedding Invitation
+              </p>
+              
+              <button
+                onClick={() => setInvitationOpened(true)}
+                className="mt-8 px-8 py-3 bg-[#3D2B1F] text-white rounded-full text-xs uppercase tracking-widest hover:bg-[#8B7355] transition-colors duration-300 shadow-lg shadow-black/10"
+              >
+                View Invitation
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {invitationOpened && !introPlayed && (
+          <motion.div
+            key="intro-video"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 1.5 }}
             className="fixed inset-0 z-[100] bg-black flex items-center justify-center"
@@ -115,7 +143,7 @@ export default function StoryApp() {
 
             <button
               onClick={() => setIntroPlayed(true)}
-              className="absolute bottom-10 px-6 py-2 bg-black/40 backdrop-blur-md text-white/90 rounded-full border border-white/20 text-xs tracking-[0.2em] uppercase transition-all hover:bg-white/20"
+              className="absolute bottom-10 px-6 py-2 bg-black/40 backdrop-blur-md text-white/90 rounded-full border border-white/20 text-xs tracking-[0.2em] uppercase transition-all hover:bg-white/20 z-10"
             >
               Skip Intro
             </button>
