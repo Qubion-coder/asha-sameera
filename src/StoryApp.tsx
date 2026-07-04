@@ -104,7 +104,7 @@ export default function StoryApp() {
               className="z-10 flex flex-col items-center gap-8"
             >
               <h1 className="script text-5xl sm:text-6xl text-[#2C2C2C] drop-shadow-sm font-normal text-center px-4">
-                Chamindu <span className="text-[#8B7355] text-4xl">&amp;</span> Onanong
+                Onanong <span className="text-[#8B7355] text-4xl">&amp;</span> Chamindu
               </h1>
               <p className="text-xs uppercase tracking-[0.3em] text-[#2C2C2C] font-medium text-center">
                 Wedding Invitation
@@ -125,10 +125,9 @@ export default function StoryApp() {
         {invitationOpened && !introPlayed && (
           <motion.div
             key="intro-video"
-            initial={{ opacity: 0 }}
+            initial={{ opacity: 1 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1.5 }}
+            exit={{ opacity: 0, transition: { duration: 1.5 } }}
             className="fixed inset-0 z-[100] bg-black flex items-center justify-center"
           >
             <video
