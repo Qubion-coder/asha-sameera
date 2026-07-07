@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Copy, Link as LinkIcon, Trash2, CheckCircle2 } from 'lucide-react';
 
 export default function AdminPage() {
-  const [prefix, setPrefix] = useState('Mr. & Mrs.');
+  const [prefix, setPrefix] = useState('');
   const [guestName, setGuestName] = useState('');
   const [links, setLinks] = useState<any[]>([]);
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
@@ -58,6 +58,7 @@ export default function AdminPage() {
               onChange={(e) => setPrefix(e.target.value)}
               className="w-full p-4 border border-zinc-200 rounded-xl bg-[#FAF7F2] focus:outline-none focus:ring-2 focus:ring-[#C8B29E] font-serif text-[#3D2B1F] text-lg"
             >
+              <option value="">No Prefix</option>
               <option value="Mr.">Mr.</option>
               <option value="Mrs.">Mrs.</option>
               <option value="Ms.">Ms.</option>
