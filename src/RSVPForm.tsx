@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 
 export default function RSVPForm() {
-  const endpoint = (import.meta as any).env?.VITE_RSVP_ENDPOINT as string | undefined;
+  const endpoint = "https://script.google.com/macros/s/AKfycbyaa258bY2m1_hIt0yk6IzPvQES8xhDoH1mXVZWep9zd54mmFTJG8sBDKIY-9I6x66oHA/exec";
 
   const [attendance, setAttendance] = useState<"yes" | "no">("yes");
   const [name, setName] = useState<string>("");
-  
+
   const [submitting, setSubmitting] = useState(false);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
