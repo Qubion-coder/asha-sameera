@@ -153,7 +153,7 @@ function FlipCard({
                 <span className="relative w-2 h-2 rounded-full bg-white shadow-sm" />
               </span>
               <span
-                className="text-white text-[9px] uppercase tracking-[0.2em] font-bold whitespace-nowrap"
+                className="text-white text-[11px] uppercase tracking-[0.2em] font-bold whitespace-nowrap"
                 style={{ fontFamily: "Inter, sans-serif", letterSpacing: "0.18em" }}
               >
                 Tap to reveal
@@ -311,8 +311,8 @@ function RSVPForm() {
   return (
     <div data-no-flip className="w-full cursor-auto">
       <CheckCircle2 size={24} className="text-sage mb-2 md:mb-4 mx-auto opacity-70 md:w-8 md:h-8" />
-      <h4 className="serif text-2xl md:text-3xl text-sage mb-2 md:mb-3 text-center">RSVP</h4>
-      <p className="text-[10px] md:text-xs text-zinc-500 uppercase tracking-widest mb-4 md:mb-6 text-center leading-relaxed">
+      <h4 className="serif text-3xl md:text-4xl text-sage mb-2 md:mb-3 text-center">RSVP</h4>
+      <p className="text-[12px] md:text-sm text-zinc-500 uppercase tracking-widest mb-4 md:mb-6 text-center leading-relaxed">
         Please let us know by
         <br />
         May 1st, 2026
@@ -324,7 +324,7 @@ function RSVPForm() {
             type="button"
             data-no-flip
             onClick={() => setAttendance("yes")}
-            className={`py-3 md:py-2.5 rounded-xl text-[10px] md:text-xs uppercase tracking-widest font-bold border transition-colors ${attendance === "yes" ? "bg-sage text-white border-sage" : "bg-white/40 text-sage border-sage/30"
+            className={`py-3 md:py-2.5 rounded-xl text-[12px] md:text-sm uppercase tracking-widest font-bold border transition-colors ${attendance === "yes" ? "bg-sage text-white border-sage" : "bg-white/40 text-sage border-sage/30"
               }`}
           >
             Attending
@@ -333,7 +333,7 @@ function RSVPForm() {
             type="button"
             data-no-flip
             onClick={() => setAttendance("no")}
-            className={`py-3 md:py-2.5 rounded-xl text-[10px] md:text-xs uppercase tracking-widest font-bold border transition-colors ${attendance === "no" ? "bg-zinc-800 text-white border-zinc-800" : "bg-white/40 text-zinc-700 border-zinc-300/60"
+            className={`py-3 md:py-2.5 rounded-xl text-[12px] md:text-sm uppercase tracking-widest font-bold border transition-colors ${attendance === "no" ? "bg-zinc-800 text-white border-zinc-800" : "bg-white/40 text-zinc-700 border-zinc-300/60"
               }`}
           >
             Not Attending
@@ -345,7 +345,7 @@ function RSVPForm() {
             type="button"
             data-no-flip
             onClick={() => setPartyType("individual")}
-            className={`py-3 md:py-2 rounded-xl text-[10px] md:text-xs uppercase tracking-widest font-bold border transition-colors ${partyType === "individual" ? "bg-sage/90 text-white border-sage" : "bg-white/40 text-sage border-sage/30"
+            className={`py-3 md:py-2 rounded-xl text-[12px] md:text-sm uppercase tracking-widest font-bold border transition-colors ${partyType === "individual" ? "bg-sage/90 text-white border-sage" : "bg-white/40 text-sage border-sage/30"
               }`}
           >
             Individual
@@ -354,7 +354,7 @@ function RSVPForm() {
             type="button"
             data-no-flip
             onClick={() => setPartyType("family")}
-            className={`py-3 md:py-2 rounded-xl text-[10px] md:text-xs uppercase tracking-widest font-bold border transition-colors ${partyType === "family" ? "bg-sage/90 text-white border-sage" : "bg-white/40 text-sage border-sage/30"
+            className={`py-3 md:py-2 rounded-xl text-[12px] md:text-sm uppercase tracking-widest font-bold border transition-colors ${partyType === "family" ? "bg-sage/90 text-white border-sage" : "bg-white/40 text-sage border-sage/30"
               }`}
           >
             Family
@@ -363,7 +363,7 @@ function RSVPForm() {
 
         {isAttending && partyType === "family" && (
           <div className="flex items-center justify-between gap-3">
-            <label className="text-[10px] md:text-xs uppercase tracking-widest font-bold text-zinc-600">Family Count</label>
+            <label className="text-[12px] md:text-sm uppercase tracking-widest font-bold text-zinc-600">Family Count</label>
             <input
               data-no-flip
               type="number"
@@ -371,7 +371,7 @@ function RSVPForm() {
               max={12}
               value={effectiveGuestCount}
               onChange={(ev) => setGuestCount(Number(ev.target.value || 2))}
-              className="w-28 rounded-xl border border-sage/20 bg-white/60 px-3 py-2.5 text-xs text-zinc-700 outline-none"
+              className="w-28 rounded-xl border border-sage/20 bg-white/60 px-3 py-2.5 text-sm text-zinc-700 outline-none"
             />
           </div>
         )}
@@ -390,7 +390,7 @@ function RSVPForm() {
                       : "Your name"
                     : "Your name"
                 }
-                className="w-full rounded-xl border border-sage/20 bg-white/60 px-3 py-2.5 text-xs text-zinc-700 outline-none"
+                className="w-full rounded-xl border border-sage/20 bg-white/60 px-3 py-2.5 text-sm text-zinc-700 outline-none"
               />
 
               <select
@@ -398,7 +398,7 @@ function RSVPForm() {
                 disabled={!isAttending}
                 value={guest?.meal ?? "non-veg"}
                 onChange={(ev) => updateGuest(idx, { meal: ev.target.value as MealPreference })}
-                className={`w-full rounded-xl border border-sage/20 bg-white/60 px-3 py-2.5 text-xs text-zinc-700 outline-none ${!isAttending ? "opacity-60" : ""
+                className={`w-full rounded-xl border border-sage/20 bg-white/60 px-3 py-2.5 text-sm text-zinc-700 outline-none ${!isAttending ? "opacity-60" : ""
                   }`}
               >
                 <option value="veg">Veg</option>
@@ -408,20 +408,20 @@ function RSVPForm() {
           ))}
         </div>
 
-        {errorMessage && <p className="text-[10px] md:text-xs text-red-700 font-semibold">{errorMessage}</p>}
-        {successMessage && <p className="text-[10px] md:text-xs text-sage font-bold">{successMessage}</p>}
+        {errorMessage && <p className="text-[12px] md:text-sm text-red-700 font-semibold">{errorMessage}</p>}
+        {successMessage && <p className="text-[12px] md:text-sm text-sage font-bold">{successMessage}</p>}
 
         <button
           type="submit"
           data-no-flip
           disabled={submitting}
-          className="w-full bg-sage text-white py-3 md:py-3 rounded-xl text-[10px] md:text-xs uppercase tracking-widest font-bold disabled:opacity-60"
+          className="w-full bg-sage text-white py-3 md:py-3 rounded-xl text-[12px] md:text-sm uppercase tracking-widest font-bold disabled:opacity-60"
         >
           {submitting ? "Submitting..." : "Submit RSVP"}
         </button>
 
         {!endpoint && (
-          <p className="text-[10px] md:text-[10px] text-zinc-500 leading-relaxed">
+          <p className="text-[12px] md:text-[12px] text-zinc-500 leading-relaxed">
             Admin setup needed: set <span className="font-bold">VITE_RSVP_ENDPOINT</span> to your Google Apps Script URL.
           </p>
         )}
@@ -536,10 +536,10 @@ export default function App() {
               transition={{ duration: 2, delay: 0.5, ease: "easeOut" }}
               className="absolute top-12 md:top-24 left-0 right-0 text-center z-10 pointer-events-none"
             >
-              <h1 className="serif text-4xl md:text-6xl text-sage/80 font-light tracking-[0.2em] drop-shadow-xl">
+              <h1 className="serif text-5xl md:text-7xl text-sage/80 font-light tracking-[0.2em] drop-shadow-xl">
                 Hashimi & Zerlin
               </h1>
-              <p className="mt-3 text-[10px] md:text-xs uppercase tracking-[0.6em] text-sage/60 font-bold">
+              <p className="mt-3 text-[12px] md:text-sm uppercase tracking-[0.6em] text-sage/60 font-bold">
                 23 May 2026
               </p>
             </motion.div>
@@ -706,7 +706,7 @@ export default function App() {
               <div className="absolute inset-0 shadow-[inset_0_0_15px_rgba(0,0,0,0.05)] pointer-events-none rounded-[2.25rem]" />
 
               <div className="absolute inset-0 flex flex-col items-center justify-center space-y-4 md:space-y-6">
-                <span className="serif text-zinc-400 text-lg md:text-3xl tracking-[0.4em] md:tracking-[0.6em] uppercase text-center px-4">
+                <span className="serif text-zinc-400 text-xl md:text-4xl tracking-[0.4em] md:tracking-[0.6em] uppercase text-center px-4">
                   The Invitation
                 </span>
                 <div className="w-10 md:w-16 h-px bg-zinc-200" />
@@ -754,7 +754,7 @@ export default function App() {
                           x="50%"
                           y="60%"
                           textAnchor="middle"
-                          className="script text-[45px] font-bold fill-[url(#gold-grad)]"
+                          className="script text-[47px] font-bold fill-[url(#gold-grad)]"
                         >
                           HZ
                         </text>
@@ -763,7 +763,7 @@ export default function App() {
                           x="50.5%"
                           y="60.5%"
                           textAnchor="middle"
-                          className="script text-[45px] font-bold fill-black/10 select-none pointer-events-none"
+                          className="script text-[47px] font-bold fill-black/10 select-none pointer-events-none"
                         >
                           HZ
                         </text>
@@ -794,7 +794,7 @@ export default function App() {
                     transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
                     className="mt-48 md:mt-64"
                   >
-                    <p className="serif text-zinc-400/60 tracking-[0.4em] uppercase text-[9px] md:text-[10px] whitespace-nowrap bg-white/50 px-4 py-1 rounded-full backdrop-blur-sm border border-zinc-100">
+                    <p className="serif text-zinc-400/60 tracking-[0.4em] uppercase text-[11px] md:text-[12px] whitespace-nowrap bg-white/50 px-4 py-1 rounded-full backdrop-blur-sm border border-zinc-100">
                       Tap to open
                     </p>
                   </motion.div>
@@ -829,15 +829,15 @@ export default function App() {
             className="flex items-center justify-center gap-4 text-sage/60"
           >
             <div className="h-px w-8 md:w-16 bg-current opacity-30" />
-            <p className="text-[10px] md:text-sm uppercase tracking-[0.6em] font-bold">With joy in our hearts</p>
+            <p className="text-[12px] md:text-base uppercase tracking-[0.6em] font-bold">With joy in our hearts</p>
             <div className="h-px w-8 md:w-16 bg-current opacity-30" />
           </motion.div>
 
           <h1 className="flex flex-col items-center px-2">
-            <span className="serif italic text-3xl sm:text-5xl md:text-[8rem] text-sage font-light leading-tight drop-shadow-sm mb-1 md:mb-6">
+            <span className="serif italic text-4xl sm:text-6xl md:text-[8rem] text-sage font-light leading-tight drop-shadow-sm mb-1 md:mb-6">
               You're Invited!
             </span>
-            <span className="serif text-sm sm:text-base md:text-4xl text-sage/40 tracking-[0.15em] md:tracking-[0.3em] uppercase font-light">
+            <span className="serif text-base sm:text-lg md:text-5xl text-sage/40 tracking-[0.15em] md:tracking-[0.3em] uppercase font-light">
               to the wedding of
             </span>
           </h1>
@@ -845,7 +845,7 @@ export default function App() {
           <div className="flex flex-row items-center justify-center gap-2 sm:gap-4 md:gap-16 mt-4 md:mt-8 relative w-full px-2">
             <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-32 bg-sage/5 blur-3xl rounded-full" />
 
-            <motion.h2 whileHover={{ scale: 1.05 }} className="script text-[13vw] sm:text-6xl md:text-9xl text-sage drop-shadow-lg relative z-10 leading-none">
+            <motion.h2 whileHover={{ scale: 1.05 }} className="script text-[13vw] sm:text-7xl md:text-9xl text-sage drop-shadow-lg relative z-10 leading-none">
               Hashimi
             </motion.h2>
 
@@ -862,7 +862,7 @@ export default function App() {
               <div className="h-px w-6 md:w-24 bg-sage/20 hidden md:block" />
             </div>
 
-            <motion.h2 whileHover={{ scale: 1.05 }} className="script text-[13vw] sm:text-6xl md:text-9xl text-sage drop-shadow-lg relative z-10 leading-none">
+            <motion.h2 whileHover={{ scale: 1.05 }} className="script text-[13vw] sm:text-7xl md:text-9xl text-sage drop-shadow-lg relative z-10 leading-none">
               Zerlin
             </motion.h2>
           </div>
@@ -932,7 +932,7 @@ export default function App() {
                 <div className="absolute top-0 bottom-0 right-0 w-px bg-white/8" />
                 <div className="absolute bottom-5 left-0 right-0 flex flex-col items-center gap-1 pointer-events-none">
                   <div className="w-16 h-px bg-sand/45" />
-                  <p className="serif italic text-sand/55 text-[10px] tracking-[0.4em] uppercase">Official Invite · 2026</p>
+                  <p className="serif italic text-sand/55 text-[12px] tracking-[0.4em] uppercase">Official Invite · 2026</p>
                   <div className="w-16 h-px bg-sand/45" />
                 </div>
               </div>
@@ -1041,28 +1041,28 @@ export default function App() {
 
                     {/* hosting families */}
                     <div className="space-y-0.5">
-                      <p className="text-[8px] sm:text-[9px] md:text-[11px] uppercase tracking-[0.3em] text-umber font-bold leading-relaxed">
+                      <p className="text-[10px] sm:text-[11px] md:text-[13px] uppercase tracking-[0.3em] text-umber font-bold leading-relaxed">
                         MR. &amp; MRS. ZAKEER
                       </p>
-                      <p className="text-[7px] sm:text-[8px] md:text-[9px] uppercase tracking-[0.25em] text-taupe font-medium">
+                      <p className="text-[9px] sm:text-[10px] md:text-[11px] uppercase tracking-[0.25em] text-taupe font-medium">
                         TOGETHER WITH
                       </p>
-                      <p className="text-[8px] sm:text-[9px] md:text-[11px] uppercase tracking-[0.3em] text-umber font-bold leading-relaxed">
+                      <p className="text-[10px] sm:text-[11px] md:text-[13px] uppercase tracking-[0.3em] text-umber font-bold leading-relaxed">
                         MR. &amp; MRS. ZAFIR ISMAIL
                       </p>
                     </div>
 
-                    <p className="text-[7px] sm:text-[8px] md:text-[9px] uppercase tracking-[0.2em] text-taupe/80 font-medium leading-relaxed max-w-[200px] md:max-w-xs">
+                    <p className="text-[9px] sm:text-[10px] md:text-[11px] uppercase tracking-[0.2em] text-taupe/80 font-medium leading-relaxed max-w-[200px] md:max-w-xs">
                       REQUEST THE PLEASURE OF YOUR COMPANY TO CELEBRATE THE MARRIAGE OF THEIR CHILDREN
                     </p>
 
                     {/* couple names */}
                     <div className="flex flex-col md:flex-row items-center justify-center gap-1 md:gap-4 max-w-full px-2">
-                      <span className="script text-[26px] sm:text-[32px] md:text-[48px] text-sage drop-shadow-sm leading-[1.1]">
+                      <span className="script text-[28px] sm:text-[34px] md:text-[50px] text-sage drop-shadow-sm leading-[1.1]">
                         Zerlin
                       </span>
-                      <span className="text-taupe/50 text-sm md:text-xl font-serif">&amp;</span>
-                      <span className="script text-[26px] sm:text-[32px] md:text-[48px] text-sage drop-shadow-sm leading-[1.1]">
+                      <span className="text-taupe/50 text-base md:text-2xl font-serif">&amp;</span>
+                      <span className="script text-[28px] sm:text-[34px] md:text-[50px] text-sage drop-shadow-sm leading-[1.1]">
                         Hashimi
                       </span>
                     </div>
@@ -1071,16 +1071,16 @@ export default function App() {
                     <div className="flex items-center gap-2 sm:gap-3 text-umber/70 w-full mt-1">
                       <div className="h-px flex-1 bg-sand/45" />
                       <div className="flex flex-col items-center gap-0.5">
-                        <span className="text-[7px] sm:text-[8px] md:text-[9px] uppercase tracking-[0.3em] text-taupe font-bold">
+                        <span className="text-[9px] sm:text-[10px] md:text-[11px] uppercase tracking-[0.3em] text-taupe font-bold">
                           MAY · SATURDAY
                         </span>
-                        <span className="serif text-[22px] sm:text-[28px] md:text-4xl text-umber font-medium leading-none">
+                        <span className="serif text-[24px] sm:text-[30px] md:text-5xl text-umber font-medium leading-none">
                           23
                         </span>
-                        <span className="text-[7px] sm:text-[8px] md:text-[9px] uppercase tracking-[0.25em] text-taupe font-bold">
+                        <span className="text-[9px] sm:text-[10px] md:text-[11px] uppercase tracking-[0.25em] text-taupe font-bold">
                           7:15 PM · 2026
                         </span>
-                        <span className="mt-1 block max-w-[200px] px-2 text-[7px] sm:text-[7px] md:text-[8px] uppercase tracking-[0.12em] text-taupe/75 text-center leading-snug break-words">
+                        <span className="mt-1 block max-w-[200px] px-2 text-[9px] sm:text-[9px] md:text-[10px] uppercase tracking-[0.12em] text-taupe/75 text-center leading-snug break-words">
                           GRAND BALLROOM, WATERS EDGE
                         </span>
                       </div>
@@ -1150,14 +1150,14 @@ export default function App() {
                   <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/natural-paper.png')] opacity-40 pointer-events-none" />
                   <div className="relative z-10 space-y-2 md:space-y-8 scale-[0.9] md:scale-100">
                     <div className="space-y-1">
-                      <span className="serif italic text-[14px] md:text-2xl text-sage/70">Our Wedding Date</span>
+                      <span className="serif italic text-[16px] md:text-3xl text-sage/70">Our Wedding Date</span>
                       <div className="w-full h-px bg-sage/20" />
                     </div>
 
                     <div className="flex flex-col items-center">
-                      <p className="text-[8px] md:text-xs uppercase tracking-[0.4em] text-zinc-400 font-black mb-1 md:mb-2">Saturday</p>
+                      <p className="text-[10px] md:text-sm uppercase tracking-[0.4em] text-zinc-400 font-black mb-1 md:mb-2">Saturday</p>
                       <div className="relative inline-block px-6 md:px-8 py-1 md:py-2 border-y border-sage/30">
-                        <p className="serif text-5xl md:text-8xl font-medium text-sage leading-none">23</p>
+                        <p className="serif text-6xl md:text-8xl font-medium text-sage leading-none">23</p>
                         <motion.div
                           animate={{ opacity: [0.4, 1, 0.4] }}
                           transition={{ repeat: Infinity, duration: 2 }}
@@ -1166,11 +1166,11 @@ export default function App() {
                           <Sparkles size={12} className="md:w-4 md:h-4" />
                         </motion.div>
                       </div>
-                      <p className="serif text-sm md:text-2xl font-light tracking-[0.2em] mt-2 md:mt-3">MAY</p>
+                      <p className="serif text-base md:text-3xl font-light tracking-[0.2em] mt-2 md:mt-3">MAY</p>
                     </div>
 
                     <div className="pt-1">
-                      <p className="text-[7px] md:text-xs uppercase tracking-[0.4em] md:tracking-[0.5em] font-black text-sage/40">
+                      <p className="text-[9px] md:text-sm uppercase tracking-[0.4em] md:tracking-[0.5em] font-black text-sage/40">
                         Twenty Twenty Six
                       </p>
                     </div>
@@ -1182,8 +1182,8 @@ export default function App() {
               back={
                 <>
                   <Heart size={20} className="text-sage mb-2 md:mb-6 mx-auto opacity-70 md:w-8 md:h-8" />
-                  <p className="serif text-[14px] md:text-2xl italic text-sage mb-2 md:mb-4 leading-relaxed">Our wedding date</p>
-                  <p className="text-[8px] md:text-xs text-zinc-500 uppercase tracking-widest leading-loose">
+                  <p className="serif text-[16px] md:text-3xl italic text-sage mb-2 md:mb-4 leading-relaxed">Our wedding date</p>
+                  <p className="text-[10px] md:text-sm text-zinc-500 uppercase tracking-widest leading-loose">
                     Saturday · 23 May 2026
                   </p>
                 </>
@@ -1204,7 +1204,7 @@ export default function App() {
                 <div className="w-full h-full bg-[#F5EFE0] p-6 flex flex-col justify-center items-center text-center relative group overflow-hidden">
                   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-sage/10 rounded-full blur-3xl pointer-events-none" />
                   <div className="relative z-10 space-y-3 md:space-y-6">
-                    <p className="serif italic text-lg md:text-2xl text-sage/60 group-hover:scale-110 transition-transform">Kindly</p>
+                    <p className="serif italic text-xl md:text-3xl text-sage/60 group-hover:scale-110 transition-transform">Kindly</p>
                     <motion.div
                       animate={{ scale: [1, 1.05, 1] }}
                       transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
@@ -1212,7 +1212,7 @@ export default function App() {
                     >
                       <img src="/images/logo.png" alt="H&Z Logo" className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 object-contain drop-shadow-xl" />
                     </motion.div>
-                    <h3 className="serif text-2xl md:text-4xl tracking-[0.3em] font-medium text-sage">RSVP</h3>
+                    <h3 className="serif text-3xl md:text-5xl tracking-[0.3em] font-medium text-sage">RSVP</h3>
                   </div>
                 </div>
               }
@@ -1241,8 +1241,8 @@ export default function App() {
                     className="absolute w-full h-full bg-gradient-to-tr from-[#A84C2C]/40 via-transparent to-[#C9B99A]/20 blur-xl"
                   />
                   <div className="relative z-10 text-white space-y-2">
-                    <p className="serif italic text-[8px] md:text-sm opacity-80 mb-1">Curious?</p>
-                    <h3 className="serif text-xl md:text-5xl tracking-widest uppercase font-light">FAQS</h3>
+                    <p className="serif italic text-[10px] md:text-base opacity-80 mb-1">Curious?</p>
+                    <h3 className="serif text-2xl md:text-6xl tracking-widest uppercase font-light">FAQS</h3>
                     <motion.div
                       animate={{ y: [0, -5, 0] }}
                       transition={{ repeat: Infinity, duration: 3 }}
@@ -1257,10 +1257,10 @@ export default function App() {
               back={
                 <div className="w-full h-full flex flex-col items-center justify-center p-6 bg-paper">
                   <HelpCircle size={28} className="text-sage mb-2 opacity-70" />
-                  <p className="text-[10px] text-zinc-600 uppercase tracking-widest font-bold mb-2">Parking?</p>
-                  <p className="serif text-xs italic mb-4">Yes, free parking available.</p>
-                  <p className="text-[10px] text-zinc-600 uppercase tracking-widest font-bold mb-2">Indoors?</p>
-                  <p className="serif text-xs italic">Partial outdoors.</p>
+                  <p className="text-[12px] text-zinc-600 uppercase tracking-widest font-bold mb-2">Parking?</p>
+                  <p className="serif text-sm italic mb-4">Yes, free parking available.</p>
+                  <p className="text-[12px] text-zinc-600 uppercase tracking-widest font-bold mb-2">Indoors?</p>
+                  <p className="serif text-sm italic">Partial outdoors.</p>
                 </div>
               }
             />
@@ -1285,11 +1285,11 @@ export default function App() {
                   />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500" />
                   <div className="absolute top-6 right-6 md:top-10 md:right-10 bg-white/60 backdrop-blur-md p-4 md:p-8 border border-white/60 rounded-2xl group-hover:bg-white/80 transition-all duration-700 shadow-xl">
-                    <p className="serif text-[8px] md:text-xs uppercase tracking-[0.4em] text-sage/80 mb-2 flex items-center gap-2">
+                    <p className="serif text-[10px] md:text-sm uppercase tracking-[0.4em] text-sage/80 mb-2 flex items-center gap-2">
                       <span className="w-4 h-px bg-sage/30" />
                       The Location
                     </p>
-                    <h3 className="serif text-2xl md:text-5xl text-sage leading-tight drop-shadow-sm font-medium">
+                    <h3 className="serif text-3xl md:text-6xl text-sage leading-tight drop-shadow-sm font-medium">
                       Waters Edge
                       <br />
                       Grand Ballroom
@@ -1300,7 +1300,7 @@ export default function App() {
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       onClick={() => window.open("https://maps.app.goo.gl/3EQ7xzj3EX9T2xEx6", "_blank")}
-                      className="mt-3 md:mt-5 px-5 py-2 md:px-7 md:py-3 bg-sage text-white rounded-full text-[9px] md:text-xs font-bold uppercase tracking-widest hover:bg-zinc-800 transition-colors"
+                      className="mt-3 md:mt-5 px-5 py-2 md:px-7 md:py-3 bg-sage text-white rounded-full text-[11px] md:text-sm font-bold uppercase tracking-widest hover:bg-zinc-800 transition-colors"
                     >
                       View Map
                     </motion.button>
@@ -1308,15 +1308,15 @@ export default function App() {
 
                   <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10 text-sage flex items-center gap-3 bg-white/60 backdrop-blur-md px-4 py-2 rounded-full border border-white/60 shadow-lg">
                     <MapPin className="text-sage animate-bounce" size={16} />
-                    <p className="serif text-[10px] md:text-sm tracking-[0.2em] font-bold uppercase">Waters Edge</p>
+                    <p className="serif text-[12px] md:text-base tracking-[0.2em] font-bold uppercase">Waters Edge</p>
                   </div>
                 </div>
               }
               back={
                 <>
                   <MapPin size={24} className="text-sage mb-4 md:mb-6 opacity-70 md:w-9 md:h-9" />
-                  <h4 className="serif text-2xl md:text-4xl text-sage mb-2 md:mb-4">Waters Edge Grand Ballroom</h4>
-                  <p className="text-[10px] md:text-sm text-zinc-500 uppercase tracking-widest leading-loose mb-4 md:mb-6">
+                  <h4 className="serif text-3xl md:text-5xl text-sage mb-2 md:mb-4">Waters Edge Grand Ballroom</h4>
+                  <p className="text-[12px] md:text-base text-zinc-500 uppercase tracking-widest leading-loose mb-4 md:mb-6">
                     Waters Edge
                     <br />
                     Grand Ballroom
@@ -1325,7 +1325,7 @@ export default function App() {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => window.open("https://maps.app.goo.gl/3EQ7xzj3EX9T2xEx6", "_blank")}
-                    className="px-6 py-2 md:px-8 md:py-3 bg-sage text-white rounded-full text-[10px] md:text-xs font-bold uppercase tracking-widest hover:bg-zinc-800 transition-colors"
+                    className="px-6 py-2 md:px-8 md:py-3 bg-sage text-white rounded-full text-[12px] md:text-sm font-bold uppercase tracking-widest hover:bg-zinc-800 transition-colors"
                   >
                     View Map
                   </motion.button>
@@ -1357,7 +1357,7 @@ export default function App() {
                     <motion.div initial={{ scale: 0.8, opacity: 0 }} whileHover={{ scale: 1, opacity: 1 }} className="bg-white/10 backdrop-blur-lg p-6 rounded-full border border-white/20">
                       <Clock size={32} className="text-white" />
                     </motion.div>
-                    <p className="serif text-white text-3xl md:text-5xl italic tracking-widest mt-6 drop-shadow-lg">Event Timeline</p>
+                    <p className="serif text-white text-4xl md:text-6xl italic tracking-widest mt-6 drop-shadow-lg">Event Timeline</p>
                     <div className="mt-4 flex gap-2">
                       {[1, 2, 3].map((i) => (
                         <div key={i} className="w-1.5 h-1.5 rounded-full bg-white/50" />
@@ -1374,58 +1374,58 @@ export default function App() {
               back={
                 <div className="w-full h-full flex flex-col justify-center items-center px-4 md:px-8">
                   <Clock size={24} className="text-sage mb-4 md:mb-6 opacity-70 md:w-8 md:h-8" />
-                  <h4 className="serif text-2xl md:text-3xl text-sage mb-4 md:mb-8">Timeline</h4>
+                  <h4 className="serif text-3xl md:text-4xl text-sage mb-4 md:mb-8">Timeline</h4>
 
                   <div className="w-full max-w-sm space-y-4 md:space-y-6 text-left">
                     <div className="flex items-start gap-2 md:gap-4">
-                      <span className="serif text-sage font-bold text-[10px] md:text-base w-12 md:w-20 text-right shrink-0 pt-1">4:45 PM</span>
+                      <span className="serif text-sage font-bold text-[12px] md:text-lg w-12 md:w-20 text-right shrink-0 pt-1">4:45 PM</span>
                       <div className="w-px h-full bg-sage/30 relative mt-2 -ml-[1px] md:-ml-2 shrink-0">
                         <div className="absolute top-0 -left-[3px] w-2 h-2 rounded-full bg-sage" />
                       </div>
                       <div>
-                        <p className="text-[10px] md:text-xs font-bold uppercase tracking-wider">Guest Arrival</p>
+                        <p className="text-[12px] md:text-sm font-bold uppercase tracking-wider">Guest Arrival</p>
                       </div>
                     </div>
 
                     <div className="flex items-start gap-2 md:gap-4">
-                      <span className="serif text-sage font-bold text-[10px] md:text-base w-12 md:w-20 text-right shrink-0 pt-1">5:00 PM</span>
+                      <span className="serif text-sage font-bold text-[12px] md:text-lg w-12 md:w-20 text-right shrink-0 pt-1">5:00 PM</span>
                       <div className="w-px h-full bg-sage/30 relative mt-2 -ml-[1px] md:-ml-2 shrink-0">
                         <div className="absolute top-0 -left-[3px] w-2 h-2 rounded-full bg-sage" />
                       </div>
                       <div>
-                        <p className="text-[10px] md:text-xs font-bold uppercase tracking-wider">Vows & Ring Exchange</p>
-                        <p className="serif text-[10px] md:text-xs italic text-zinc-500">Lawn Area</p>
+                        <p className="text-[12px] md:text-sm font-bold uppercase tracking-wider">Vows & Ring Exchange</p>
+                        <p className="serif text-[12px] md:text-sm italic text-zinc-500">Lawn Area</p>
                       </div>
                     </div>
 
                     <div className="flex items-start gap-2 md:gap-4">
-                      <span className="serif text-sage font-bold text-[10px] md:text-base w-12 md:w-20 text-right shrink-0 pt-1">6:00 PM</span>
+                      <span className="serif text-sage font-bold text-[12px] md:text-lg w-12 md:w-20 text-right shrink-0 pt-1">6:00 PM</span>
                       <div className="w-px h-full bg-sage/30 relative mt-2 -ml-[1px] md:-ml-2 shrink-0">
                         <div className="absolute top-0 -left-[3px] w-2 h-2 rounded-full bg-sage" />
                       </div>
                       <div>
-                        <p className="text-[10px] md:text-xs font-bold uppercase tracking-wider">Wedding Reception</p>
-                        <p className="serif text-[10px] md:text-xs italic text-zinc-500">Ballroom</p>
+                        <p className="text-[12px] md:text-sm font-bold uppercase tracking-wider">Wedding Reception</p>
+                        <p className="serif text-[12px] md:text-sm italic text-zinc-500">Ballroom</p>
                       </div>
                     </div>
 
                     <div className="flex items-start gap-2 md:gap-4">
-                      <span className="serif text-sage font-bold text-[10px] md:text-base w-12 md:w-20 text-right shrink-0 pt-1">6:30 PM</span>
+                      <span className="serif text-sage font-bold text-[12px] md:text-lg w-12 md:w-20 text-right shrink-0 pt-1">6:30 PM</span>
                       <div className="w-px h-full bg-sage/30 relative mt-2 -ml-[1px] md:-ml-2 shrink-0">
                         <div className="absolute top-0 -left-[3px] w-2 h-2 rounded-full bg-sage" />
                       </div>
                       <div>
-                        <p className="text-[10px] md:text-xs font-bold uppercase tracking-wider">Cocktail Hour</p>
+                        <p className="text-[12px] md:text-sm font-bold uppercase tracking-wider">Cocktail Hour</p>
                       </div>
                     </div>
 
                     <div className="flex items-start gap-2 md:gap-4">
-                      <span className="serif text-sage font-bold text-[10px] md:text-base w-12 md:w-20 text-right shrink-0 pt-1">12:00 AM</span>
+                      <span className="serif text-sage font-bold text-[12px] md:text-lg w-12 md:w-20 text-right shrink-0 pt-1">12:00 AM</span>
                       <div className="w-px h-full bg-sage/30 relative mt-2 -ml-[1px] md:-ml-2 shrink-0">
                         <div className="absolute top-0 -left-[3px] w-2 h-2 rounded-full bg-sage" />
                       </div>
                       <div>
-                        <p className="text-[10px] md:text-xs font-bold uppercase tracking-wider">Celebration Ends</p>
+                        <p className="text-[12px] md:text-sm font-bold uppercase tracking-wider">Celebration Ends</p>
                       </div>
                     </div>
                   </div>
@@ -1443,13 +1443,13 @@ export default function App() {
         >
           <div className="flex items-center justify-center gap-6 text-sage/40">
             <div className="h-px w-16 bg-current" />
-            <span className="text-xs uppercase tracking-[0.6em] font-medium">Est. 2026</span>
+            <span className="text-sm uppercase tracking-[0.6em] font-medium">Est. 2026</span>
             <div className="h-px w-16 bg-current" />
           </div>
-          <p className="serif italic text-zinc-500 text-xl max-w-lg mx-auto leading-relaxed">
+          <p className="serif italic text-zinc-500 text-2xl max-w-lg mx-auto leading-relaxed">
             "Love is not just something you feel, it's something you do."
           </p>
-          <p className="serif text-sage/60 text-sm italic">We can't wait to celebrate with you</p>
+          <p className="serif text-sage/60 text-base italic">We can't wait to celebrate with you</p>
         </motion.footer>
       </motion.main>
 

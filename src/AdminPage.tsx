@@ -47,16 +47,16 @@ export default function AdminPage() {
           <div className="w-12 h-12 bg-[#F7E7CE] rounded-full flex items-center justify-center mb-4 shadow-inner">
             <LinkIcon className="text-[#8B7355] w-6 h-6" />
           </div>
-          <h1 className="serif text-2xl md:text-3xl text-[#3D2B1F] tracking-widest uppercase font-bold text-center">Link Generator</h1>
+          <h1 className="serif text-3xl md:text-4xl text-[#3D2B1F] tracking-widest uppercase font-bold text-center">Link Generator</h1>
         </div>
 
         <div className="space-y-6">
           <div>
-            <label className="block text-[10px] uppercase tracking-[0.2em] font-bold text-[#8B7355] mb-2">Select Prefix</label>
+            <label className="block text-[12px] uppercase tracking-[0.2em] font-bold text-[#8B7355] mb-2">Select Prefix</label>
             <select 
               value={prefix} 
               onChange={(e) => setPrefix(e.target.value)}
-              className="w-full p-4 border border-zinc-200 rounded-xl bg-[#FAF7F2] focus:outline-none focus:ring-2 focus:ring-[#C8B29E] font-serif text-[#3D2B1F] text-lg"
+              className="w-full p-4 border border-zinc-200 rounded-xl bg-[#FAF7F2] focus:outline-none focus:ring-2 focus:ring-[#C8B29E] font-serif text-[#3D2B1F] text-xl"
             >
               <option value="">No Prefix</option>
               <option value="Mr.">Mr.</option>
@@ -71,20 +71,20 @@ export default function AdminPage() {
           </div>
 
           <div>
-            <label className="block text-[10px] uppercase tracking-[0.2em] font-bold text-[#8B7355] mb-2">Guest Name</label>
+            <label className="block text-[12px] uppercase tracking-[0.2em] font-bold text-[#8B7355] mb-2">Guest Name</label>
             <input 
               type="text" 
               placeholder="e.g. Sanjaya" 
               value={guestName}
               onChange={(e) => setGuestName(e.target.value)}
-              className="w-full p-4 border border-zinc-200 rounded-xl bg-[#FAF7F2] focus:outline-none focus:ring-2 focus:ring-[#C8B29E] font-serif text-[#3D2B1F] text-lg"
+              className="w-full p-4 border border-zinc-200 rounded-xl bg-[#FAF7F2] focus:outline-none focus:ring-2 focus:ring-[#C8B29E] font-serif text-[#3D2B1F] text-xl"
             />
           </div>
 
           <button 
             onClick={handleGenerate}
             disabled={!guestName.trim()}
-            className="w-full py-4 bg-[#C8B29E] text-white rounded-xl uppercase tracking-widest font-bold text-sm hover:bg-[#b09780] transition-colors disabled:opacity-50 shadow-md"
+            className="w-full py-4 bg-[#C8B29E] text-white rounded-xl uppercase tracking-widest font-bold text-base hover:bg-[#b09780] transition-colors disabled:opacity-50 shadow-md"
           >
             Generate Link
           </button>
@@ -93,7 +93,7 @@ export default function AdminPage() {
 
       <div className="w-full max-w-lg mt-12">
         <div className="flex justify-between items-center mb-6 px-2">
-          <h2 className="serif text-xl text-[#3D2B1F] uppercase tracking-widest font-bold">Recently Generated</h2>
+          <h2 className="serif text-2xl text-[#3D2B1F] uppercase tracking-widest font-bold">Recently Generated</h2>
           {links.length > 0 && (
             <button onClick={clearLinks} className="p-2 text-zinc-400 hover:text-red-500 transition-colors" title="Clear all links">
               <Trash2 className="w-5 h-5" />
@@ -103,13 +103,13 @@ export default function AdminPage() {
         
         <div className="space-y-4">
           {links.length === 0 ? (
-            <p className="text-center text-zinc-400 font-serif italic text-sm">No links generated yet.</p>
+            <p className="text-center text-zinc-400 font-serif italic text-base">No links generated yet.</p>
           ) : (
             links.map((link, idx) => (
               <div key={idx} className="bg-white p-5 rounded-2xl shadow-sm border border-[#EAE1D3] flex items-center justify-between">
                 <div className="flex-1 pr-4">
-                  <p className="font-serif text-[#3D2B1F] text-xl font-medium truncate">{link.prefix} {link.guestName}</p>
-                  <p className="text-xs text-zinc-500 font-mono mt-2 tracking-wider">{link.date}</p>
+                  <p className="font-serif text-[#3D2B1F] text-2xl font-medium truncate">{link.prefix} {link.guestName}</p>
+                  <p className="text-sm text-zinc-500 font-mono mt-2 tracking-wider">{link.date}</p>
                 </div>
                 <button 
                   onClick={() => copyToClipboard(link.url, idx)}

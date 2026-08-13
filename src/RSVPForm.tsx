@@ -70,7 +70,7 @@ export default function RSVPForm() {
           <button
             type="button"
             onClick={() => setAttendance("yes")}
-            className={`py-3 rounded-xl text-[10px] uppercase tracking-widest font-bold border transition-colors ${attendance === "yes" ? "bg-[#C8B29E] text-white border-[#C8B29E]" : "bg-white text-zinc-400 border-zinc-200"
+            className={`py-3 rounded-xl text-[12px] uppercase tracking-widest font-bold border transition-colors ${attendance === "yes" ? "bg-[#C8B29E] text-white border-[#C8B29E]" : "bg-white text-zinc-400 border-zinc-200"
               }`}
           >
             Yes, I will attend
@@ -78,7 +78,7 @@ export default function RSVPForm() {
           <button
             type="button"
             onClick={() => setAttendance("no")}
-            className={`py-3 rounded-xl text-[10px] uppercase tracking-widest font-bold border transition-colors ${attendance === "no" ? "bg-zinc-700 text-white border-zinc-700" : "bg-white text-zinc-400 border-zinc-200"
+            className={`py-3 rounded-xl text-[12px] uppercase tracking-widest font-bold border transition-colors ${attendance === "no" ? "bg-zinc-700 text-white border-zinc-700" : "bg-white text-zinc-400 border-zinc-200"
               }`}
           >
             No, I cannot
@@ -90,17 +90,17 @@ export default function RSVPForm() {
             value={name}
             onChange={(ev) => setName(ev.target.value)}
             placeholder="Guest Name"
-            className="w-full rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-3 text-sm text-[#3D2B1F] font-serif outline-none focus:border-[#C8B29E] focus:ring-1 focus:ring-[#C8B29E]"
+            className="w-full rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-3 text-base text-[#3D2B1F] font-serif outline-none focus:border-[#C8B29E] focus:ring-1 focus:ring-[#C8B29E]"
           />
         </div>
 
-        {errorMessage && <p className="text-[10px] text-red-600 font-semibold">{errorMessage}</p>}
-        {successMessage && <p className="text-[10px] text-[#8B7355] font-bold">{successMessage}</p>}
+        {errorMessage && <p className="text-[12px] text-red-600 font-semibold">{errorMessage}</p>}
+        {successMessage && <p className="text-[12px] text-[#8B7355] font-bold">{successMessage}</p>}
 
         <button
           type="submit"
           disabled={submitting}
-          className="w-full bg-[#3D2B1F] text-white py-3.5 rounded-xl text-[10px] uppercase tracking-widest font-bold disabled:opacity-60 shadow-md transition-colors hover:bg-black mt-2"
+          className="w-full bg-[#3D2B1F] text-white py-3.5 rounded-xl text-[12px] uppercase tracking-widest font-bold disabled:opacity-60 shadow-md transition-colors hover:bg-black mt-2"
         >
           {submitting ? "Submitting..." : "Submit RSVP"}
         </button>
