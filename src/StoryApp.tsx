@@ -266,7 +266,7 @@ export default function StoryApp() {
 
                   <div className="flex flex-col items-center w-full mb-8">
                     <p className="text-[11px] uppercase tracking-[0.2em] text-zinc-400 mb-3 font-bold">Bride's Parents</p>
-                    <p className="serif text-xl text-[#2C2C2C] leading-relaxed">Mr. &amp; Mrs. Yapa</p>
+                    <p className="serif text-xl text-[#2C2C2C] leading-relaxed text-center">Mr. Upul Bandara Yapa<br/>&amp; Mrs. Kamani Priyanthi Yapa</p>
                   </div>
 
                   {/* Elegant Divider */}
@@ -278,7 +278,7 @@ export default function StoryApp() {
 
                   <div className="flex flex-col items-center w-full">
                     <p className="text-[11px] uppercase tracking-[0.2em] text-zinc-400 mb-3 font-bold">Groom's Parents</p>
-                    <p className="serif text-xl text-[#2C2C2C] leading-relaxed">Mr. &amp; Mrs. Delpearachchige</p>
+                    <p className="serif text-xl text-[#2C2C2C] leading-relaxed text-center">Mr. Sunil Delpearachchige<br/>&amp; Mrs. Manjula Delpearachchige</p>
                   </div>
                 </div>
               </motion.div>
