@@ -446,7 +446,7 @@ export default function StoryApp() {
                     <p className="text-[10px] uppercase tracking-widest text-zinc-500 mt-1">Badulla</p>
                     <p className="text-[10px] uppercase tracking-widest text-zinc-500 mb-3 px-2 text-center">No. 205, Keppetipola Road, Badulla</p>
                     <a
-                      href="https://maps.app.goo.gl/RU45U8xe2TiZsmL98"
+                      href="https://maps.app.goo.gl/XrNGSDx3cGwqkxE49"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1 px-3 py-1.5 bg-[#EAE1D3] text-[#3D2B1F] rounded-full text-[10px] uppercase tracking-widest font-bold hover:bg-[#C8B29E] transition-colors"
