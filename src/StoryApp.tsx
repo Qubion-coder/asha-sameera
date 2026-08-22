@@ -31,7 +31,7 @@ export default function StoryApp() {
   });
 
   useEffect(() => {
-    const weddingDate = new Date('2026-10-22T08:30:00').getTime();
+    const weddingDate = new Date('2026-10-22T09:30:00').getTime();
 
     const interval = setInterval(() => {
       const now = new Date().getTime();
@@ -103,8 +103,8 @@ export default function StoryApp() {
               transition={{ delay: 0.5, duration: 1 }}
               className="z-10 flex flex-col items-center gap-8"
             >
-              <h1 className="script text-6xl sm:text-7xl text-[#2C2C2C] drop-shadow-sm font-normal text-center px-4">
-                Asha <span className="text-[#8B7355] text-5xl">&amp;</span> Sameera
+              <h1 className="serif text-5xl sm:text-6xl tracking-widest text-[#2C2C2C] drop-shadow-sm font-normal text-center px-4">
+                ASHA <span className="text-[#8B7355] text-5xl sm:text-6xl">&amp;</span> SAMEERA
               </h1>
               <p className="text-sm uppercase tracking-[0.3em] text-[#2C2C2C] font-medium text-center">
                 Wedding Invitation
@@ -131,7 +131,7 @@ export default function StoryApp() {
             className="fixed inset-0 z-[100] bg-black flex items-center justify-center"
           >
             <video
-              src="/snaptik_7626793615695777044_v3 (online-video-cutter.com).mp4"
+              src="/WhatsApp Video 2026-07-02 at 00.31.44.mp4"
               autoPlay
               muted
               playsInline
@@ -208,7 +208,7 @@ export default function StoryApp() {
                     </div>
                     <p className="serif text-7xl sm:text-[4.5rem] font-medium text-[#2C2C2C] leading-none px-1">22</p>
                     <div className="flex-1 text-left border-y border-[#2C2C2C]/30 py-2">
-                      <p className="text-[12px] sm:text-sm uppercase tracking-widest text-[#2C2C2C] font-bold">AT 8:30 AM</p>
+                      <p className="text-[12px] sm:text-sm uppercase tracking-widest text-[#2C2C2C] font-bold">AT 9:30 AM</p>
                     </div>
                   </div>
                   <p className="text-[13px] sm:text-[15px] uppercase tracking-widest text-[#2C2C2C] font-bold mt-2">2026</p>
@@ -222,7 +222,7 @@ export default function StoryApp() {
                 >
                   <p className="text-[12px] sm:text-sm uppercase tracking-widest font-bold flex items-center justify-center gap-1.5">
                     <MapPin size={12} className="text-[#8B7355]" />
-                    SHERWOOD BY THE BURN
+                    SHERWOOD BY THE BARN
                   </p>
                 </a>
 
@@ -449,11 +449,11 @@ export default function StoryApp() {
                   <div className="absolute left-1/2 top-0 bottom-0 w-px bg-zinc-300 -translate-x-1/2" />
 
                   {[
-                    { time: "8:30 AM", title: "GUEST ARRIVAL" },
-                    { time: "9:50 AM", title: "PORUWA CEREMONY" },
-                    { time: "12:30 PM", title: "WEDDING RECEPTION" },
-                    { time: "1:30 PM", title: "LUNCH BUFFET" },
-                    { time: "4:30 PM", title: "GOING AWAY" },
+                    { time: "9:30 AM", title: "GUEST ARRIVAL" },
+                    { time: "10:21 AM", title: "RING EXCHANGE" },
+                    { time: "12:00 PM", title: "WEDDING RECEPTION" },
+                    { time: "12:30 PM", title: "LUNCH BUFFET" },
+                    { time: "4:00 PM", title: "GOING AWAY" },
                   ].map((item, idx) => (
                     <div key={idx} className="relative z-10 bg-white/70 backdrop-blur-sm p-4 rounded-xl border border-white shadow-sm w-[85%] mx-auto">
                       <p className="text-[13px] font-bold text-[#8B7355] mb-1">{item.time}</p>
@@ -490,7 +490,7 @@ export default function StoryApp() {
                     <p className="text-[12px] uppercase tracking-[0.2em] font-bold text-[#8B7355]">Location</p>
                   </div>
                   <div className="bg-white py-4 rounded-b-xl shadow-sm border border-white mb-4 flex flex-col items-center">
-                    <p className="text-[12px] uppercase font-bold text-[#3D2B1F]">Sherwood by the burn</p>
+                    <p className="text-[12px] uppercase font-bold text-[#3D2B1F]">Sherwood by The Barn</p>
                     <a
                       href="https://maps.app.goo.gl/VgWSMkWAvRJSvMQp8?g_st=iw"
                       target="_blank"
