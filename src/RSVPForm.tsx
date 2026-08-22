@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 export default function RSVPForm() {
-  const endpoint = "https://script.google.com/macros/s/AKfycbxrf5dhO6EWCnIEzScJGh4RZyT_2CqmwwSQG8gCbWEm_pwGwteLni08YU_uY350CNHx/exec";
+  const endpoint = "https://script.google.com/macros/s/AKfycbwe5hLb96siJO1sYrHX-yRTNPR-ZX2ZIV_83438PCvTny2mfWCxVEUgd94J22e2CZdtww/exec";
 
   const [attendance, setAttendance] = useState<"yes" | "no">("yes");
   const [name, setName] = useState<string>("");
@@ -44,7 +44,7 @@ export default function RSVPForm() {
     try {
       const res = await fetch(endpoint, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
         body: JSON.stringify(payload),
       });
       if (!res.ok) throw new Error(String(res.status));
