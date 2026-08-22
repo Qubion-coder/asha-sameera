@@ -31,7 +31,7 @@ export default function StoryApp() {
   });
 
   useEffect(() => {
-    const weddingDate = new Date('2026-09-24T08:30:00').getTime();
+    const weddingDate = new Date('2026-10-22T08:30:00').getTime();
 
     const interval = setInterval(() => {
       const now = new Date().getTime();
@@ -74,8 +74,8 @@ export default function StoryApp() {
 
   // Read personalized guest link params
   const urlParams = new URLSearchParams(window.location.search);
-  const guestPrefix = urlParams.get('prefix') || 'Mr. & Mrs./ Mr./Ms.';
-  const guestName = urlParams.get('guest') || 'Kawabe Masaki and Family';
+  const guestPrefix = urlParams.get('prefix') || '';
+  const guestName = urlParams.get('guest') || '';
 
   return (
     <>
@@ -104,7 +104,7 @@ export default function StoryApp() {
               className="z-10 flex flex-col items-center gap-8"
             >
               <h1 className="script text-6xl sm:text-7xl text-[#2C2C2C] drop-shadow-sm font-normal text-center px-4">
-                Shakila <span className="text-[#8B7355] text-5xl">&amp;</span> Madawa
+                Asha <span className="text-[#8B7355] text-5xl">&amp;</span> Sameera
               </h1>
               <p className="text-sm uppercase tracking-[0.3em] text-[#2C2C2C] font-medium text-center">
                 Wedding Invitation
@@ -201,12 +201,12 @@ export default function StoryApp() {
                 </h1>
 
                 <div className="flex flex-col items-center w-full mb-8 sm:mb-10">
-                  <p className="text-[13px] sm:text-[15px] uppercase tracking-widest text-[#2C2C2C] font-bold mb-2">SEPTEMBER</p>
+                  <p className="text-[13px] sm:text-[15px] uppercase tracking-widest text-[#2C2C2C] font-bold mb-2">OCTOBER</p>
                   <div className="flex items-center justify-center w-full gap-4">
                     <div className="flex-1 text-right border-y border-[#2C2C2C]/30 py-2">
                       <p className="text-[12px] sm:text-sm uppercase tracking-widest text-[#2C2C2C] font-bold">THURSDAY</p>
                     </div>
-                    <p className="serif text-7xl sm:text-[4.5rem] font-medium text-[#2C2C2C] leading-none px-1">24</p>
+                    <p className="serif text-7xl sm:text-[4.5rem] font-medium text-[#2C2C2C] leading-none px-1">22</p>
                     <div className="flex-1 text-left border-y border-[#2C2C2C]/30 py-2">
                       <p className="text-[12px] sm:text-sm uppercase tracking-widest text-[#2C2C2C] font-bold">AT 8:30 AM</p>
                     </div>
@@ -215,17 +215,15 @@ export default function StoryApp() {
                 </div>
 
                 <a
-                  href="https://maps.app.goo.gl/RU45U8xe2TiZsmL98"
+                  href="https://maps.app.goo.gl/VgWSMkWAvRJSvMQp8?g_st=iw"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="space-y-2 mt-2 sm:mt-4 text-[#2C2C2C] hover:opacity-70 transition-opacity block"
                 >
                   <p className="text-[12px] sm:text-sm uppercase tracking-widest font-bold flex items-center justify-center gap-1.5">
                     <MapPin size={12} className="text-[#8B7355]" />
-                    HERITAGE GRAND
+                    SHERWOOD BY THE BURN
                   </p>
-                  <p className="text-[11px] sm:text-[12px] uppercase tracking-[0.15em] font-medium">BADULLA</p>
-                  <p className="text-[11px] sm:text-[12px] uppercase tracking-[0.15em] font-medium px-4">NO. 205, KEPPETIPOLA ROAD, BADULLA</p>
                 </a>
 
                 <div className="mt-8 sm:mt-10">
@@ -266,7 +264,7 @@ export default function StoryApp() {
 
                   <div className="flex flex-col items-center w-full mb-8">
                     <p className="text-[11px] uppercase tracking-[0.2em] text-zinc-400 mb-3 font-bold">Bride's Parents</p>
-                    <p className="serif text-xl text-[#2C2C2C] leading-relaxed text-center">Mr. Upul Bandara Yapa<br/>&amp; Mrs. Kamani Priyanthi Yapa</p>
+                    <p className="serif text-xl text-[#2C2C2C] leading-relaxed text-center">Mr. Nihal<br/>&amp; Mrs. Kumari Jayawardana</p>
                   </div>
 
                   {/* Elegant Divider */}
@@ -278,7 +276,7 @@ export default function StoryApp() {
 
                   <div className="flex flex-col items-center w-full">
                     <p className="text-[11px] uppercase tracking-[0.2em] text-zinc-400 mb-3 font-bold">Groom's Parents</p>
-                    <p className="serif text-xl text-[#2C2C2C] leading-relaxed text-center">Mr. Sunil Delpearachchige<br/>&amp; Mrs. Manjula Delpearachchige</p>
+                    <p className="serif text-xl text-[#2C2C2C] leading-relaxed text-center">Mr. Lakshman<br/>&amp; Mrs. Kanthi Mendis</p>
                   </div>
                 </div>
               </motion.div>
@@ -349,7 +347,7 @@ export default function StoryApp() {
               className="w-full h-[65dvh] shrink-0 relative"
             >
               <img
-                src="/4.jpg.jpeg"
+                src="/PRE/WhatsApp Image 2026-08-22 at 02.23.03 (2).jpeg"
                 alt="Couple"
                 className="w-full h-full object-cover object-top"
               />
@@ -364,19 +362,69 @@ export default function StoryApp() {
               className="flex-1 w-full flex flex-col items-center justify-start text-center pt-2 pb-12 z-20 bg-white"
             >
               <h2 className="serif text-6xl md:text-7xl text-[#2C2C2C] font-normal leading-none mt-4">
-                SHAKILA
+                ASHA
               </h2>
               <span className="script text-5xl md:text-6xl text-[#2C2C2C] my-1 opacity-80">and</span>
               <h2 className="serif text-6xl md:text-7xl text-[#2C2C2C] font-normal leading-none">
-                MADAWA
+                SAMEERA
               </h2>
             </motion.div>
           </div>
         </section>
 
-
-
-
+        {/* --- SCREEN 3: Our Story --- */}
+        <section className="snap-section relative z-10 overflow-hidden">
+          <SectionBackground />
+          <div className="absolute inset-0 overflow-y-auto no-scrollbar flex flex-col items-center p-6 text-center">
+            <div className="w-full my-auto flex flex-col items-center justify-center py-10">
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 1 }}
+                className="bg-white/40 backdrop-blur-md p-8 rounded-[2rem] border border-white/60 w-full max-w-sm flex flex-col items-center shadow-lg py-12"
+              >
+                <h2 className="serif text-4xl tracking-[0.2em] text-[#3D2B1F] font-medium uppercase mb-2">
+                  Our
+                </h2>
+                <h3 className="script text-5xl text-[#8B7355] mb-8">
+                  Story
+                </h3>
+                
+                <h4 className="serif text-lg text-[#3D2B1F] mb-6 font-medium italic">
+                  Two Hearts, One Journey
+                </h4>
+                
+                <div className="w-full h-48 sm:h-56 rounded-2xl overflow-hidden mb-8 shadow-sm border border-[#EAE1D3]">
+                  <img src="/PRE/WhatsApp Image 2026-08-22 at 02.23.02 (1).jpeg" className="w-full h-full object-cover object-center" alt="Our Journey" />
+                </div>
+                
+                <div className="space-y-4 text-[13px] leading-relaxed text-[#2C2C2C]">
+                  <p>
+                    Our story began with two people who never knew that one day, their paths would lead them to the same beautiful place.
+                  </p>
+                  <p>
+                    Through laughter, little moments, unforgettable memories, and countless dreams, we slowly discovered something special — a love that feels like home.
+                  </p>
+                  <p>
+                    We have walked through different seasons of life together, holding each other close through every smile and every challenge. And somewhere along the way, “you and me” became “us.”
+                  </p>
+                  <p>
+                    Today, as we look toward the future, we know that the best part of our story is still waiting to be written.
+                  </p>
+                  <p>
+                    So, with grateful hearts and endless love, we invite you to celebrate with us as we begin the next chapter of our journey — surrounded by the people who mean the most to us.
+                  </p>
+                  <p className="font-bold text-[#8B7355] italic">
+                    Two hearts. One love. One beautiful forever. ❤️
+                  </p>
+                  <p className="font-medium text-[11px] uppercase tracking-widest mt-6">
+                    And this is only the beginning…
+                  </p>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
 
         {/* --- SCREEN 4: Timeline --- */}
         <section className="snap-section relative z-10 overflow-hidden">
@@ -435,21 +483,19 @@ export default function StoryApp() {
                   <h2 className="serif text-4xl tracking-[0.2em] text-[#3D2B1F] font-medium uppercase mb-6">Details</h2>
 
                   <div className="w-full h-32 rounded-xl overflow-hidden mb-4 relative">
-                    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2d/cd/08/b1/caption.jpg?w=900&h=500&s=1" className="w-full h-full object-cover" alt="Venue" />
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCsyH3A541H3Y6_Wim4JD3g0rUcXJitvuCXIGVtHkjWiyUf5d_h1FUIMA&s=10" className="w-full h-full object-cover" alt="Venue" />
                   </div>
 
                   <div className="bg-[#EAE1D3] py-2 rounded-t-xl mb-1">
                     <p className="text-[12px] uppercase tracking-[0.2em] font-bold text-[#8B7355]">Location</p>
                   </div>
                   <div className="bg-white py-4 rounded-b-xl shadow-sm border border-white mb-4 flex flex-col items-center">
-                    <p className="text-[12px] uppercase font-bold text-[#3D2B1F]">Heritage Grand</p>
-                    <p className="text-[10px] uppercase tracking-widest text-zinc-500 mt-1">Badulla</p>
-                    <p className="text-[10px] uppercase tracking-widest text-zinc-500 mb-3 px-2 text-center">No. 205, Keppetipola Road, Badulla</p>
+                    <p className="text-[12px] uppercase font-bold text-[#3D2B1F]">Sherwood by the burn</p>
                     <a
-                      href="https://maps.app.goo.gl/XrNGSDx3cGwqkxE49"
+                      href="https://maps.app.goo.gl/VgWSMkWAvRJSvMQp8?g_st=iw"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 px-3 py-1.5 bg-[#EAE1D3] text-[#3D2B1F] rounded-full text-[10px] uppercase tracking-widest font-bold hover:bg-[#C8B29E] transition-colors"
+                      className="mt-4 inline-flex items-center gap-1 px-3 py-1.5 bg-[#EAE1D3] text-[#3D2B1F] rounded-full text-[10px] uppercase tracking-widest font-bold hover:bg-[#C8B29E] transition-colors"
                     >
                       <MapPin size={10} />
                       Live Location
@@ -483,7 +529,7 @@ export default function StoryApp() {
                 </div>
 
                 <p className="serif text-[13px] sm:text-[15px] uppercase tracking-[0.15em] font-bold text-[#2C2C2C] mb-6">
-                  BY SEPTEMBER 10, 2026
+                  BY OCTOBER 10, 2026
                 </p>
 
                 <div className="w-full">
@@ -529,6 +575,41 @@ export default function StoryApp() {
                 </p>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* --- SCREEN 8: Thank You --- */}
+        <section className="snap-section relative z-10 overflow-hidden bg-white">
+          <div className="absolute inset-0 overflow-y-auto no-scrollbar flex flex-col items-center justify-center text-center">
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 1 }}
+              className="w-full h-full relative"
+            >
+              <img
+                src="/PRE/WhatsApp Image 2026-08-22 at 02.23.03 (3).jpeg"
+                alt="Thank You"
+                className="w-full h-full object-cover object-center opacity-90"
+              />
+              <div className="absolute inset-0 bg-black/30 pointer-events-none" />
+              
+              <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-white z-10">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1, delay: 0.3 }}
+                  className="flex flex-col items-center"
+                >
+                  <h2 className="script text-6xl md:text-7xl mb-4 drop-shadow-md">
+                    Thank You
+                  </h2>
+                  <p className="serif text-sm uppercase tracking-[0.3em] font-medium drop-shadow-md">
+                    For being part of our story
+                  </p>
+                </motion.div>
+              </div>
+            </motion.div>
           </div>
         </section>
 
